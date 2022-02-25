@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Documents</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding-left padding-right>
+  <img src="assets/imgs/logo.png" class="logo">
+  <div class="active-stage" padding>
+      <ion-row text-center>
+          <ion-col class="active"><span><strong></strong></span></ion-col>
+          <!-- <ion-col><span><strong></strong></span></ion-col> -->
+      </ion-row>
+  </div>
+    <div padding-left padding-right>
+      <p text-center>Please upload your documents and fill out the forms as suits</p>
+      <!-- <div>
+        <img src="{{image}}" alt="{{v_document}}{{pass}}{{image}}">
+      </div> -->
+<div class="" *ngIf="non">
+      <button ion-button block class="btn round shadow-green" (click)="snap()">Take a selfie</button>
+         <!-- <input type="file" accept="image/*" id="upload" (change)="do($event)"/> -->
+         <img src="{{imgs}}" #img>
+</div>
+
+
+<!-- vehicle papers here -->
+<!-- certificate of registration -->
+<div class="" *ngIf="snapped">
+      <button ion-button block class="btn round shadow-green" (click)="snap_g('poi','snapped','snapped_1')">Proof of Identity</button>
+</div>
+
+<!-- vehicle insurance -->
+<div class="" *ngIf="snapped_1">
+      <button ion-button block class="btn round shadow-green" (click)="snap_g('plicense','snapped_1','snapped_2')">DVLA Plastic Driving Licence</button>
+</div>
+
+<!-- vehicle photo -->
+<div class="" *ngIf="snapped_2">
+      <button ion-button block class="btn round shadow-green" (click)="snap_g('statement','snapped_2','snapped_3')">Bank statement</button>
+</div>
+
+<!-- Driver's license -->
+<div class="" *ngIf="snapped_3">
+      <button ion-button block class="btn round shadow-green" (click)="snap_g('pco','snapped_3','snapped_4')">Private Hire Driver Licence / PCO Licence</button>
+</div>
+
+<div class="" *ngIf="snapped_4">
+      <button ion-button block class="btn round shadow-green" (click)="snap_g('doc','snapped_4','snapped_5')">Vehicle Documents</button>
+</div>
+
+<div class="" *ngIf="snapped_5">
+      <button ion-button block class="btn round shadow-green" (click)="snap_g('mot','snapped_5','snapped_6')">MOT test certificate</button>
+</div>
+
+<div class="" *ngIf="snapped_6">
+  <ion-item class="bg-light">
+      <ion-label>Enter DVLA Electronic Counterpart Check Code</ion-label>
+      <ion-input name="color" type="text" [formControl]="credentialsForm.controls['dvla']" text-right></ion-input>
+  </ion-item>
+    <button ion-button block class="btn round shadow-green" (click)="add('dvla','snapped_6','passport')">Next</button>
+</div>
+
+
+<div class="" *ngIf="passport" text-center>
+  <p>Your National Identity Card or International Passport</p>
+      <button ion-button block class="btn round shadow-green" (click)="snap_p('passport')">Select</button>
+</div>
+
+<div class="" *ngIf="form">
+  <div><p>Add your bank Details</p></div>
+  <ion-list class="form">
+      <ion-item class="bg-light">
+          <ion-label>Choose the type</ion-label>
+          <ion-select okText="Okay" cancelText="Cancel" name="banktype"  [formControl]="credentialsForm.controls['banktype']" text-right>
+            <ion-option value="Access Bank">Access Bank</ion-option>
+            <ion-option value="Citi Bank">Citi Bank</ion-option>
+            <ion-option value="Access(Diamond Bank)">Diamond Bank (Access Bank)</ion-option>
+            <ion-option value="Ecobank">Ecobank</ion-option>
+            <ion-option value="Fidelity Bank">Fidelity Bank</ion-option>
+            <ion-option value="First Bank">First Bank</ion-option>
+            <ion-option value="First City Monument Bank">First City Monument Bank</ion-option>
+            <ion-option value="GT bank">Guaranty Trust Bank</ion-option>
+            <ion-option value="Heritage Bank">Heritage Bank</ion-option>
+            <ion-option value="Jaiz Bank">Jaiz Bank</ion-option>
+            <ion-option value="Keystone bank">Keystone Bank</ion-option>
+            <ion-option value="Polaris bank">Polaris Bank (Skye Bank)</ion-option>
+            <ion-option value="Providus Bank">Providus Bank PLC</ion-option>
+            <ion-option value="Stanbic IBTC">Stanbic IBTC</ion-option>
+            <ion-option value="Standard Chartered Bank">Standard Chartered</ion-option>
+            <ion-option value="Sterling Bank">Sterling Bank</ion-option>
+            <ion-option value="Suntrust Bank">Suntrust Bank Nig Ltd</ion-option>
+            <ion-option value="Union Bank">Union Bank</ion-option>
+            <ion-option value="UBA">United Bank for Africa</ion-option>
+            <ion-option value="Unity Bank">Unity Bank</ion-option>
+            <ion-option value="Wema Bank">Wema Bank</ion-option>
+            <ion-option value="Zenith bank">Zenith Bank</ion-option>
+</ion-select>
+      </ion-item>
+      <ion-item class="bg-light">
+          <ion-label>Enter Your account number</ion-label>
+          <ion-input name="account_number" type="text" [formControl]="credentialsForm.controls['account_number']" text-right></ion-input>
+      </ion-item>
+      <ion-item class="bg-light">
+          <ion-label>Enter the vehicle color</ion-label>
+          <ion-input name="color" type="text" [formControl]="credentialsForm.controls['color']" text-right></ion-input>
+      </ion-item>
+  </ion-list>
+
+        <button ion-button block class="btn round shadow-green" (click)="send()">Submit</button>
+</div>
+<div class="" *ngIf="progresser">
+<p class="" text-center>
+Kindly excercise patient while your files and datas are being uploaded</p><br>
+<h1 style='color:green;'>Your file is {{progress}} % uploaded</h1><br>
+<i>Still uploading......</i>
+</div>
+
+<div class="" *ngIf="testy">
+  <div class="" *ngFor="let item of body">
+    <div class="">
+      {{item}}
+    </div>
+  </div>
+</div>
+
+<div class="" *ngIf="wait"  text-center>
+  <h1>Well done!!</h1>
+  <p>You have successfully sent your registration information and documents</p>
+  <p>Please wait while accessing your documents and you will receive an email with your login information upon approval<br></p>
+  <h1>Thank you for choosing BMP car</h1>
+    <button ion-button block class="btn round shadow-green" (click)="back()">Return to the login page</button>
+</div>
+
+
+      </div>
+
+</ion-content>

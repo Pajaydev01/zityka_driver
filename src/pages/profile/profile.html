@@ -1,0 +1,87 @@
+<ion-header class="bg-theme">
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-light">
+  <ion-list no-lines>
+      <ion-item>
+          <ion-avatar item-start>
+              <img [src]="profileImg">
+          </ion-avatar>
+          <h2 class="d-flex">{{drivername}}
+              <span class="end text-theme" (click)="logout()">Logout</span>
+          </h2>
+          <p class="d-flex">
+              <small>{{averageRating}}</small>
+              <span class="rateing  d-flex">
+                  <ion-icon name="ios-star" *ngFor="let element of ratingStars" [style.color]="element.enable ? 'green' : 'black'"></ion-icon>
+              </span>
+          </p>
+      </ion-item>
+
+          <ion-item class="car-detail">
+              <p class="text-">{{vehicleModel}}</p>
+              <h2 class="text-dark"><strong>{{vehicleNumber}}</strong></h2>
+          </ion-item>
+  </ion-list>
+  <div class="menu-items">
+      <ion-row>
+            <!--
+                <ion-col col-6>
+                    <div class="manu_box" text-center (click)="mytripsPage()">
+                        <ion-icon class="material-icons">directions_car</ion-icon>
+                        <h4>My Trips</h4>
+                    </div>
+                </ion-col>
+
+
+                <ion-col col-6>
+                    <div class="manu_box" text-center (click)="wallet()">
+                        <h2>$ 150.50</h2>
+                        <h4>Wallet</h4>
+                    </div>
+                </ion-col>
+            -->
+
+              <ion-col col-6>
+                  <div class="manu_box" text-center (click)="documentsPage()">
+                      <ion-icon class="material-icons">assignment_ind</ion-icon>
+                      <h4>Documents</h4>
+                  </div>
+              </ion-col>
+
+          <ion-col col-6>
+              <div class="manu_box" text-center (click)="helpPage()">
+                  <ion-icon class="material-icons">help</ion-icon>
+                  <h4>Help</h4>
+              </div>
+          </ion-col>
+          <ion-col col-6>
+              <div class="manu_box" text-center (click)="aboutPage()">
+                  <ion-icon class="material-icons">assignment</ion-icon>
+                  <h4>T & C</h4>
+              </div>
+          </ion-col>
+
+              <ion-col col-6>
+                  <div class="manu_box" text-center (click)="radius()">
+                      <ion-icon class="material-icons">my_location</ion-icon>
+                      <h4>Change Pick Up Location</h4>
+                  </div>
+              </ion-col>
+
+      </ion-row>
+
+      <div *ngIf="change">
+        <ion-item>
+            <ion-input type="text" value="" placeholder="Pickup Address" [(ngModel)]="address" ></ion-input>
+          </ion-item>
+          <button ion-button block full class="bg-green text-white btn round shadow-green" (click)="changer()">Change</button>
+  </div>
+  </div>
+</ion-content>

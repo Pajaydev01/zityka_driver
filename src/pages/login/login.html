@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>Sign In</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding-left padding-right padding-top text-center>
+  <img src="assets/imgs/logo.png" class="logo">
+  <div padding>
+      <form [formGroup]="credentialsForm">
+          <ion-list class="form" no-lines>
+              <ion-item class="bg-light">
+                  <ion-label>Your email</ion-label>
+                  <ion-input [formControl]="credentialsForm.controls['username']" type="email" value="" text-end></ion-input>
+              </ion-item>
+              <ion-item class="bg-light">
+                  <ion-label>Password</ion-label>
+                  <ion-input [formControl]="credentialsForm.controls['password']" class="password" type="password" value="" text-end></ion-input>
+              </ion-item>
+          </ion-list>
+      </form>
+      <button ion-button block full text-uppercase class="bg-green text-white btn round shadow-green" (click)="login()">Login</button>
+  </div>
+  <ion-row padding-left padding-right>
+      <ion-col (click)="signupPage()"><small>New user?<strong class="text-theme">Sign up</strong></small></ion-col>
+      <ion-col text-end (click)="forgotPassword()"><small>Forgot<strong class="text-theme">Password? </strong></small></ion-col>
+  </ion-row>
+</ion-content>

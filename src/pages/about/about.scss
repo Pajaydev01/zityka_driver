@@ -1,0 +1,28 @@
+page-about {
+    .logo {
+        width: 176px;
+        margin: auto;
+        margin-top: 45px;
+
+        h2 {
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 0;
+            color: lighten($gray, 5%);
+        }
+    }
+
+    .text_box {
+        width: calc(100% - 60px);
+        margin: 0 auto;
+        margin-top: 36px;
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: .5px;
+            line-height: 23px;
+            color: darken($gray, 10%);
+        }
+    }
+}

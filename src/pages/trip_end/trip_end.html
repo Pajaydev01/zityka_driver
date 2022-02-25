@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            <span>{{ridername}}</span>
+            <!-- <small (click)="riderinfo()" class="end" text-capitalize>Info</small> -->
+        </ion-title>
+    </ion-navbar>
+    <ion-list no-lines>
+        <ion-item>
+            <ion-avatar item-start>
+                <img [src]="profileImg">
+            </ion-avatar>
+            <div class="text">
+                <h3 class="text-light">Drive to</h3>
+                <h2>{{dropoff}}</h2>
+            </div>
+            <div class="navigate" (click)="navigate()" item-end>
+                <ion-icon class="material-icons">navigation</ion-icon>
+                <h3 class="text-light">Navigate</h3>
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-header>
+
+<ion-content>
+    <div #map id="map" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+</ion-content>
+<ion-footer no-border >
+  <div *ngIf="show">
+    <button ion-button block class="shadow-red btn" (click)="stats()">Double tap to end trip</button>
+  </div>  
+  
+  <div *ngIf="hide">
+    <button ion-button block class="shadow-green btn">Awaiting Rider's approval</button>
+    </div>
+</ion-footer>

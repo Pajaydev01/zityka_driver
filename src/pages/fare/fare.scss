@@ -1,0 +1,144 @@
+page-fare {
+    .header .toolbar .title .toolbar-title {
+        text-align: center !important;
+        display: block !important;
+    }
+
+    .recipt {
+        background: $white;
+
+        h6 {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            margin-top: 0;
+            padding-top: 60px;
+            padding-bottom: 17px;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 90px;
+                height: 6px;
+                background: $theme-color;
+                border-radius: 50px;
+                margin: 0 auto;
+            }
+        }
+
+        h1 {
+            font-size: 5.4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding-bottom: 4px;
+            margin: 0;
+            padding-top: 43px;
+        }
+
+        p {
+            margin-top: 0;
+            font-weight: 500;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+            color: lighten($gray, 0%);
+        }
+    }
+
+    .recipt {
+        ion-list {
+            border: none !important;
+            width: 168px;
+            margin: 5rem auto 0rem;
+            padding-bottom: 2rem;
+
+            ion-item {
+                border: none !important;
+                padding: 0;
+
+                .item-inner {
+                    padding: 0 !important;
+                }
+
+                ion-avatar {
+                    width: 47px !important;
+                    height: 47px !important;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 5px;
+
+                    &[item-start] {
+                        margin: 0;
+                        margin-right: 14px;
+                    }
+
+                    img {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: -50% !important;
+                        right: -50% !important;
+                        bottom: 0;
+                        margin: auto;
+                        border-radius: 0;
+                    }
+                }
+
+                h2 {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+
+            }
+        }
+
+        img {
+            display: block;
+        }
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 27px;
+            display: block;
+            position: absolute;
+            background: url(../../assets/imgs/receipt-bodder.png);
+            background-repeat: repeat-x;
+            background-size: 12px;
+        }
+    }
+
+    .footer {
+        padding-bottom: 20px;
+
+        .rateing_btn {
+            width: calc(100% - 80px);
+            margin: 0 auto;
+
+            .rateing {
+                display: flex;
+                align-items: center;
+                padding-bottom: 20px;
+
+                ion-icon {
+                    color: lighten($gray, 30%);
+                    font-size: 5rem;
+                    //padding: 0 5px;
+                    display: block;
+                    margin: 0 auto;
+
+                    &.active {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+
+        .button.btn[block] {
+            background: $red_color !important;
+        }
+    }
+}

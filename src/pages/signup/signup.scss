@@ -1,0 +1,106 @@
+page-signup {
+    img {
+        display: block;
+
+        &.logo {
+            margin: 0 auto;
+            width: 150px;
+            margin-bottom: 0px;
+            margin-top: 39px;
+        }
+    }
+
+    .row {
+        &.name_camra {
+            margin: 0 -3px;
+
+            .col {
+                padding: 6.5px 3px;
+            }
+        }
+    }
+
+
+    .form {
+        margin-bottom: 0;
+
+        &.camra {
+            height: 90px;
+            position: relative;
+            color: $gray;
+
+            ion-icon {
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                font-size: 2.5rem;
+                position: absolute;
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+    }
+
+    .active-stage {
+        width: 135px;
+        margin: auto;
+        position: relative;
+
+        span {
+            width: 17px;
+            display: block;
+            background: $white;
+            margin: auto;
+
+            strong {
+                margin: auto;
+                display: block;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: $bg-color;
+            }
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: calc(100% - 71px);
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: .8px;
+            background: $bg-color;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: -1;
+        }
+
+        .row {
+            .col {
+                &.active {
+                    span strong {
+                        background: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .button.btn {
+        margin-top: 17px;
+    }
+
+    .row {
+        &.text {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 0;
+        }
+    }
+
+}

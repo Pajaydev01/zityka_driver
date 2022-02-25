@@ -1,0 +1,25 @@
+<ion-header class="bg-transparent">
+    <ion-navbar>
+        <ion-title>
+            <ion-icon name="md-close" (click)="dismiss()" class="end"></ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="modal_container" text-center>
+        <div class="rider_img">
+            <img [src]="profileImg">
+        </div>
+        <div class="rider_details">
+            <h2>{{ridername}}</h2>
+            <h3 class="text-theme">{{riderphone}}</h3>
+        </div>
+        <p class="d-flex"><span>{{averageRating}}</span>
+            <ion-icon name="ios-star" *ngFor="let element of ratingStars" [style.color]="element.enable ? 'green' : 'black'"></ion-icon>
+        </p>
+    </div>
+</ion-content>
+<ion-footer no-border>
+    <button ion-button block class="shadow-green btn" (click)="call()">Call {{ridername2}}</button>
+</ion-footer>

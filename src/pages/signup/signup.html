@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Sign up</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding-left padding-right>
+    <img src="assets/imgs/logo.png" class="logo">
+    <div class="active-stage" padding>
+        <ion-row text-center>
+            <ion-col class="active"><span><strong></strong></span></ion-col>
+            <!-- <ion-col><span><strong></strong></span></ion-col> -->
+        </ion-row>
+    </div>
+    <div padding-left padding-right>
+        <form [formGroup]="credentialsForm">
+            <ion-row class="name_camra">
+                <!--
+                    <ion-col col-4 text-center>
+                        <div class="bg-light form camra">
+                            <ion-icon name="camera"></ion-icon>
+                        </div>
+                    </ion-col>
+                -->
+
+                <ion-col col-12>
+                    <ion-list class="form">
+                        <ion-item class="bg-light">
+                            <ion-label>First Name</ion-label>
+                            <ion-input type="text"  [formControl]="credentialsForm.controls['firstname']" text-right></ion-input>
+                        </ion-item>
+                        <ion-item class="bg-light">
+                            <ion-label>Last Name</ion-label>
+                            <ion-input type="text" [formControl]="credentialsForm.controls['lastname']" text-right></ion-input>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+
+            </ion-row>
+            <ion-list class="form">
+                <ion-item class="bg-light">
+                    <ion-label>Phone Number</ion-label>
+                    <ion-input name="phoneno" type="text" [formControl]="credentialsForm.controls['phonenumber']" text-right></ion-input>
+                </ion-item>
+                <ion-item class="bg-light">
+                    <ion-label>Email Address</ion-label>
+                    <ion-input name="email" type="text" [formControl]="credentialsForm.controls['email']" text-right></ion-input>
+                </ion-item>
+                <ion-item class="bg-light">
+                    <ion-label>Your Location</ion-label>
+                    <ion-input name="location" type="text" [formControl]="credentialsForm.controls['location']" text-right></ion-input>
+                </ion-item>
+                <ion-item class="bg-light">
+                    <ion-label>Your Ride Type</ion-label>
+                    <ion-select okText="Okay" cancelText="Dismiss" name="rideType"  [formControl]="credentialsForm.controls['rideType']" text-right>
+      <ion-option value="car">Car</ion-option>
+      <ion-option value="bike">Bike</ion-option>
+    </ion-select>
+                </ion-item>
+            </ion-list>
+        </form>
+        <button ion-button block class="btn round shadow-green" (click)="signup()">Sign up now</button>
+
+        <ion-row padding-left padding-right padding-top text-center class="text">
+            <ion-col (click)="loginPage()">Already registered? <strong class="text-theme">Sign In</strong></ion-col>
+        </ion-row>
+    </div>
+</ion-content>

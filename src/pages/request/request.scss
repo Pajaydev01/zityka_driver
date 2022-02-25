@@ -1,0 +1,87 @@
+page-request {
+    .bg-img {
+        background: url(../../assets/imgs/home-bg.jpg);
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .header .toolbar-background {
+        background: transparent !important;
+    }
+    .header button ion-icon {
+        color: #000000 !important;
+    }
+    .header::after {
+        display: none;
+    }
+    .header-ios .toolbar-background-ios,
+    .footer-ios .toolbar-background-ios {
+        border: none;
+    }
+    .full {
+        border-radius: 5px !important;
+        .time {
+            text-transform: unset !important;
+            font-weight: 100 !important;
+        }
+    }
+    .card-box {
+        position: absolute;
+        bottom: -10px;
+        width: calc(100% - 2rem);
+        left: 1rem;
+        .card {
+            border-radius: 10px 10px 0 0 !important;
+        }
+        small.text-light {
+            color: #626262 !important;
+        }
+        ion-card-content {
+            padding: 0 5px 5px !important;
+        }
+    }
+    .card-box {
+        .passanger-info.heading {
+            background: none !important;
+            padding: 0 !important;
+            ion-avatar {
+                width: 45px !important;
+                height: 45px !important;
+            }
+            h2 {
+                font-size: 1.4rem;
+                font-weight: 600;
+                padding-bottom: 4px;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .item-inner {
+                border-bottom: 0 !important;
+            }
+            img {
+                border-radius: 10px !important;
+            }
+            .item-block:last-child {
+                border: none !important;
+            }
+        }
+        .rateing {
+            padding-left: 4px;
+            ion-icon {
+                font-size: 1.3rem !important;
+                padding: 0 2px;
+            }
+        }
+    }
+    .car-details {
+        small {
+            display: block;
+            margin-bottom: 3px;
+        }
+    }
+}

@@ -1,0 +1,189 @@
+page-home {
+    .header {
+        .list {
+            margin-bottom: 0;
+
+            .item {
+                padding: 0;
+                background: none;
+                width: 260px;
+                margin: 0 auto;
+
+                p {
+                    margin: 0 !important;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    letter-spacing: 1px;
+                    width: 100px;
+
+                    &.active {
+                        color: $white;
+                    }
+
+                    &.disabled {
+                        color: darken($theme-color, 20%);
+                    }
+                }
+
+                .item-inner {
+                    padding: 0;
+                }
+
+                .input-wrapper {
+                    display: none;
+                }
+
+                ion-toggle {
+                    .toggle-icon {
+                        background: darken($theme-color, 17%) !important;
+
+                        .toggle-inner {
+                            background: $white !important;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .scroll-content {
+        margin-bottom: 0 !important;
+    }
+
+    .footer {
+        .card {
+            width: calc(100% - 26px);
+            margin: 0 auto;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            padding: 0 25px 20px 25px;
+
+            .card-header {
+                padding: 20px 0 18px 0;
+
+                h2 {
+                    font-weight: 500;
+                    font-size: 1.7rem;
+                }
+            }
+
+            .card-content {
+                padding: 0;
+
+                h4 {
+                    margin: 0;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    color: lighten($gray, 10%);
+
+                }
+
+                h2 {
+                    color: $theme-color;
+                    font-weight: 600;
+                    padding-top: 5px;
+
+                    ion-icon {
+                        font-size: 2rem;
+                        margin-right: 10px;
+                    }
+
+                }
+
+                .row {
+                    margin: 0 -5px;
+                    padding-bottom: 5px;
+
+                }
+            }
+
+            &.passanger_info {
+                padding-bottom: 10px;
+
+                .card-header {
+                    h2 {
+                        font-weight: 500;
+                        font-size: 1.1rem;
+                        color: lighten($gray, 10%);
+
+                        span {
+                            color: $theme-color;
+                        }
+                    }
+                }
+
+                .card-content {
+                    .passanger-info {
+                        .passanger_img {
+                            position: relative;
+                            overflow: hidden;
+                            min-width: 45px;
+                            width: 45px;
+                            height: 45px;
+                            border-radius: 7px;
+                            margin-right: 13px;
+
+                            img {
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: -50% !important;
+                                right: -50% !important;
+                                margin: 0 auto;
+                                width: 100%;
+                                height: 100%;
+
+                            }
+                        }
+
+                        .passanger_details {
+                            padding-bottom: 15px;
+
+                            h2 {
+                                font-size: 1.4rem;
+                                color: darken($theme-color, 100%);
+                            }
+
+                            p {
+                                font-size: 1.2rem;
+                                font-weight: 500;
+                                color: lighten($gray, 5%);
+                                margin: 0 -5px;
+
+                                small {
+                                    font-size: 1.2rem;
+                                    font-weight: 500;
+                                    margin: 0 5px;
+                                }
+
+                                ion-icon {
+                                    margin: 0 2px;
+                                    font-size: 1.6rem;
+                                    color: lighten($gray, 20%);
+                                    display: inline;
+
+                                    &.active {
+                                        color: $theme-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .row {
+                        .col {
+                            h2 {
+                                font-weight: 700;
+                                font-size: 1.45rem;
+                                color: darken($theme-color, 100%);
+                                padding-top: 1px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
