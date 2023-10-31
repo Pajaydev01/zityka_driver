@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>
+
+      </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bg-img">
+  <div class="card-box">
+      <ion-card class="text-black">
+          <ion-card-header>
+              <small float-left class="text-light" *ngIf="data.info.isExecutive==1">EXECUTIVE RIDE</small>
+              <small (click)="declineRequest()" float-right class="text-green" style="color: red;">Déclin</small>
+          </ion-card-header>
+          <ion-card-content>
+              <div class="passanger-info heading">
+                  <ion-list>
+                      <ion-item>
+                          <ion-avatar item-start>
+                              <img [src]="profileImg">
+                          </ion-avatar>
+                          <h2 class="text-black">
+                              {{ridername}}
+                          </h2>
+
+                          <span class="rateing  d-flex">
+                              <ion-icon name="ios-star" *ngFor="let element of ratingStars" [style.color]="element.enable ? 'green' : 'black'"></ion-icon>
+                          </span>
+
+                      </ion-item>
+                  </ion-list>
+              </div>
+              <ion-row padding class="car-details">
+                  <ion-col>
+                      <small class="text-light">Ramasser de</small>
+                      <strong class="text-black">{{pickup}}</strong>
+                  </ion-col>
+              </ion-row>
+              <div text-center padding-left padding-right>
+                  <button ion-button full class="bg-green full" (click)="acceptPage()"> J'ACCEPTE </button>
+              </div>
+          </ion-card-content>
+      </ion-card>
+  </div>
+</ion-content>

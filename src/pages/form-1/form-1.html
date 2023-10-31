@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Documents</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding-left padding-right>
+  <img src="assets/imgs/logo.png" class="logo">
+  <div class="active-stage" padding>
+      <ion-row text-center>
+          <ion-col class="active"><span><strong></strong></span></ion-col>
+          <!-- <ion-col><span><strong></strong></span></ion-col> -->
+      </ion-row>
+  </div>
+    <div padding-left padding-right>
+      <p text-center>Veuillez télécharger vos documents et remplir les formulaires comme suits</p>
+      <!-- <div>
+        <img src="{{image}}" alt="{{v_document}}{{pass}}{{image}}">
+      </div> -->
+<div class="" *ngIf="non">
+      <button ion-button block class="btn round shadow-green" (click)="snap()">Prendre un selfie</button>
+</div>
+
+
+<!-- vehicle papers here -->
+<!-- certificate of registration -->
+<div class="" *ngIf="snapped">
+      <button ion-button block class="btn round shadow-green" (click)="snap_d()">Certificate des imatriculation</button>
+</div>
+
+<!-- vehicle insurance -->
+<div class="" *ngIf="snapped_1">
+      <button ion-button block class="btn round shadow-green" (click)="snap_a()">Assurance des Vehicle</button>
+</div>
+
+<!-- vehicle photo -->
+<div class="" *ngIf="snapped_2">
+      <button ion-button block class="btn round shadow-green" (click)="snap_b()">Photo des véhicule/Moto</button>
+</div>
+
+<!-- Driver's license -->
+<div class="" *ngIf="snapped_3">
+      <button ion-button block class="btn round shadow-green" (click)="snap_c()">Permis de conduire</button>
+</div>
+
+
+<div class="" *ngIf="passport" text-center>
+  <p> votre Carte National d'identité  ou Passport international</p>
+      <button ion-button block class="btn round shadow-green" (click)="snap_p('this.pass','this.passport','this.passport')">Sélectionner</button>
+</div>
+
+<div class="" *ngIf="form">
+  <div><p>Ajoutez votre compte bancaire</p></div>
+  <ion-list class="form">
+      <ion-item class="bg-light">
+          <ion-label>Choisissez le type</ion-label>
+          <ion-select okText="D'accord" cancelText="Rejeter" name="banktype"  [formControl]="credentialsForm.controls['banktype']" text-right>
+<ion-option value="Togocel">Togocel</ion-option>
+<ion-option value="Moov">Moov</ion-option>
+</ion-select>
+      </ion-item>
+      <ion-item class="bg-light">
+          <ion-label>Entrez le numéro de compte</ion-label>
+          <ion-input name="account_number" type="text" [formControl]="credentialsForm.controls['account_number']" text-right></ion-input>
+      </ion-item>
+      <ion-item class="bg-light">
+          <ion-label>Entrez la couleur du véhicule</ion-label>
+          <ion-input name="color" type="text" [formControl]="credentialsForm.controls['color']" text-right></ion-input>
+      </ion-item>
+  </ion-list>
+
+        <button ion-button block class="btn round shadow-green" (click)="send()">Soumettre</button>
+</div>
+
+<div class="" *ngIf="progresser">
+<p class="" text-center>
+Veuillez exercer le patient pendant que vos fichiers et données sont en cours de téléchargement</p><br>
+<h1 style='color:green;'>Votre fichier est {{progress}} % téléchargé</h1><br>
+<i>Still uploading......</i>
+</div>
+
+
+<div class="" *ngIf="wait"  text-center>
+  <h1>Bien fait!!</h1>
+  <p>Vous avez envoyé avec succès vos informations d'inscription et vos documents</p>
+  <p>Veuillez patienter pendant l'accès à vos documents et vous recevrez un e-mail contenant vos informations de connexion lors de l'approbation<br></p>
+  <h1>Merci d'avoir choisi la voiture Zityka</h1>
+    <button ion-button block class="btn round shadow-green" (click)="back()">Revenir à la page de connexion</button>
+</div>
+
+
+      </div>
+
+</ion-content>

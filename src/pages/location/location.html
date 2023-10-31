@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            <span>{{ridername}}</span>
+            <!-- <small (click)="riderinfo()" class="end" text-capitalize>Info</small> -->
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div #map id="map" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+    <ion-list class="form" no-lines>
+        <ion-item class="from">
+            <ion-icon class="material-icons" item-start>fiber_manual_record</ion-icon>
+            <p class="d-flex"><span class="">From</span> {{pickup}}</p>
+        </ion-item>
+        <ion-item class="to">
+            <ion-icon class="material-icons" item-start>fiber_manual_record</ion-icon>
+            <p class="d-flex"><span class="">To</span> {{dropoff}}</p>
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer no-border>
+    <button ion-button block class="shadow-green btn" (click)="start_trip()">Double tap to begin trip</button>
+</ion-footer>

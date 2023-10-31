@@ -1,0 +1,25 @@
+page-login {
+    img {
+        display: block;
+
+        &.logo {
+            margin: 0 auto;
+            width: 150px;
+            margin-bottom: 30px;
+            margin-top: 39px;
+        }
+    }
+
+    .row {
+        .col {
+            small {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+
+            strong {
+                margin: 0 4px;
+            }
+        }
+    }
+}

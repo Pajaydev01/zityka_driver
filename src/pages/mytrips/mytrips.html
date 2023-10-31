@@ -1,0 +1,46 @@
+<ion-header class="bg-theme">
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Mon voyage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="bg-light">
+  <div style="text-align: center" *ngIf='upcoming_items?.length === 0'><br/>
+    Vous n'avez pas encore terminé un voyage
+  </div>
+  <div [ngSwitch]="tab">
+    <ion-list no-lines *ngSwitchCase="'past'">
+      <ion-item *ngFor="let item of upcoming_items">
+        <div class="driver_details d-flex">
+          <div class="driver_img">
+            <img src="{{item.user_profile_img}}">
+          </div>
+          <div class="text_box">
+            <h2 class="d-flex">
+              {{ item.ride_date  | date:"dd-MMM-yyyy HH:mm a" }}
+              <span class="end">CFA{{item.ride_amount}}</span>
+            </h2>
+            <h3 class="d-flex">
+              {{item.rider_name}}
+              <span class="end">{{item.pay_method}}</span>
+            </h3>
+          </div>
+        </div>
+        <div class="from_to">
+          <div class="box from d-flex">
+            <ion-icon class="material-icons">fiber_manual_record</ion-icon>
+            <p> {{item.pickup_text}}</p>
+          </div>
+          <div class="box to d-flex">
+            <ion-icon class="material-icons">fiber_manual_record</ion-icon>
+            <p> {{item.dropoff_text}}</p>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

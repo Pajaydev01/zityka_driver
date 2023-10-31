@@ -1,0 +1,84 @@
+{
+  "project_info": {
+    "project_number": "29794702032",
+    "firebase_url": "https://bmpusers.firebaseio.com",
+    "project_id": "bmpusers",
+    "storage_bucket": "bmpusers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29794702032:android:29244739d213855a8804d5",
+        "android_client_info": {
+          "package_name": "com.zityka.driver"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_4EqGhG1paEkC8yACAgReBUNrx3Vbx68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29794702032-ts24pjjh0pkk9n9q04h609t1sgvel67p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "29794702032-4pjk682k6as1u2i7f5p6q4c8ksthrl62.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bmpcar.bmpusers",
+                "app_store_id": "1484742441"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29794702032:android:cd809cda8fc1569e8804d5",
+        "android_client_info": {
+          "package_name": "com.bmpcar.bmpusers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29794702032-oikjt1i02n0ac3uo8pfc4q55q33vart0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bmpcar.bmpusers",
+            "certificate_hash": "8048750a99470f05669d03242c0b7b71d9bd3c38"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_4EqGhG1paEkC8yACAgReBUNrx3Vbx68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29794702032-ts24pjjh0pkk9n9q04h609t1sgvel67p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "29794702032-4pjk682k6as1u2i7f5p6q4c8ksthrl62.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bmpcar.bmpusers",
+                "app_store_id": "1484742441"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

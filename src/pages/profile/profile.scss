@@ -1,0 +1,183 @@
+page-profile {
+    .header {
+        .list {
+            margin-bottom: 0;
+
+            .item {
+                padding: 0;
+                background: none;
+                width: 260px;
+                margin: 0 auto;
+
+                p {
+                    margin: 0 !important;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    letter-spacing: 1px;
+                    width: 100px;
+
+                    &.active {
+                        color: $white;
+                    }
+
+                    &.disabled {
+                        color: darken($theme-color, 20%);
+                    }
+                }
+
+                .item-inner {
+                    padding: 0;
+                }
+
+                .input-wrapper {
+                    display: none;
+                }
+
+                ion-toggle {
+                    .toggle-icon {
+                        background: darken($theme-color, 17%) !important;
+
+                        .toggle-inner {
+                            background: $white !important;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .content {
+        .list {
+
+            background: $white;
+            margin: 0;
+            padding-top: 13px;
+            box-shadow: 0 -1px 3px 1px rgba(0, 0, 0, 0.1);
+
+            .item {
+                padding: 15px 14px 10px 32px;
+
+                ion-avatar {
+                    width: 45px;
+                    min-width: 45px;
+                    height: 45px;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 5px;
+
+                    &[item-start] {
+                        margin: 0;
+                        margin-right: 14px;
+                    }
+
+                    img {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: -50% !important;
+                        right: -50% !important;
+                        bottom: 0;
+                        margin: auto;
+                        border-radius: 0;
+                    }
+                }
+
+                .item-inner {
+                    padding: 0;
+
+                    .label {
+                        margin: 0 !important;
+
+                        h2 {
+                            font-weight: 500;
+                            font-size: 1.5rem;
+                            padding-bottom: 3px;
+                            margin: 0;
+
+                            span {
+                                font-size: 1.2rem;
+                            }
+                        }
+
+                        p {
+                            font-size: 1.2rem;
+                            font-weight: 500;
+                            color: lighten($gray, 5%);
+                            margin: 0 -5px;
+
+                            small {
+                                font-size: 1.2rem;
+                                font-weight: 500;
+                                margin: 0 5px;
+                            }
+
+                            ion-icon {
+                                margin: 0 1px;
+                                font-size: 1.5rem;
+                                color: lighten($gray, 20%);
+                                display: inline;
+
+                                &.active {
+                                    color: $theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.car-detail {
+                    .item-inner .label {
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-items {
+        .row {
+            padding: 8px;
+            padding-top: 3px;
+
+            .col {
+                padding: 6px 4px 4px 6px;
+
+                .manu_box {
+                    background: $white;
+                    box-shadow: 0 3px 8px -1px rgba(0, 0, 0, 0.1);
+                    padding: 25px 7px 25px 7px;
+
+                    ion-icon {
+                        color: $theme-color;
+                    }
+
+                    h2 {
+                        color: $theme-color;
+                        margin: 0;
+                        font-weight: 600;
+                        font-size: 1.9rem;
+                        padding-bottom: 4px;
+                    }
+
+                    h4 {
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        margin: 0;
+                        padding-top: 15px;
+                    }
+                }
+            }
+        }
+
+    }
+    .flex-full{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+    }
+}

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>S'inscrire</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding-left padding-right padding-top text-center>
+  <img src="assets/imgs/logo.png" class="logo">
+  <div padding>
+      <form [formGroup]="credentialsForm">
+          <ion-list class="form" no-lines>
+              <ion-item class="bg-light">
+                  <ion-label>Votre adresse email</ion-label>
+                  <ion-input [formControl]="credentialsForm.controls['username']" type="email" value="" text-end></ion-input>
+              </ion-item>
+              <ion-item class="bg-light">
+                  <ion-label>Mot de passe</ion-label>
+                  <ion-input [formControl]="credentialsForm.controls['password']" class="password" type="password" value="" text-end></ion-input>
+              </ion-item>
+          </ion-list>
+      </form>
+      <button ion-button block full text-uppercase class="bg-green text-white btn round shadow-green" (click)="login()">S'identifier</button>
+  </div>
+  <ion-row padding-left padding-right>
+      <ion-col (click)="signupPage()"><small>Nouvel utilisateur ?<strong class="text-theme">S'inscrire</strong></small></ion-col>
+      <ion-col text-end (click)="forgotPassword()"><small><strong class="text-theme">Mot de passe oublié? </strong></small></ion-col>
+  </ion-row>
+</ion-content>

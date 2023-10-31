@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>
+          <!-- <small text-capitalize (click)="cancelride()">Cacel Ride</small> -->
+          <span>{{ridername}}</span>
+          <small (click)="riderinfo()" class="end" text-capitalize>Info</small>
+      </ion-title>
+  </ion-navbar>
+  <ion-list no-lines>
+      <ion-item>
+          <ion-avatar item-start>
+              <img [src]="profileImg">
+          </ion-avatar>
+          <div class="text">
+              <h3 class="text-light">Ramasser de</h3>
+              <h2>{{pickup}}</h2>
+          </div>
+          <div class="navigate" (click)="navigate()" item-end>
+              <ion-icon class="material-icons">navigation</ion-icon>
+              <h3 class="text-light">Naviguer</h3>
+          </div>
+      </ion-item>
+  </ion-list>
+</ion-header>
+
+<ion-content>
+  <!-- <div #map id="map" class="mymap"></div> -->
+  <div #map id="map" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+</ion-content>
+<ion-footer no-border>
+  <button ion-button block class="shadow-green btn" (click)="location()">Arrivée</button>
+</ion-footer>

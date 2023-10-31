@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+      <ion-list no-lines>
+          <ion-item>
+              <p item-start class="active" text-start>Hors ligne</p>
+              <ion-toggle [(ngModel)]="checked" (ngModelChange)="onlineOfflineToggle()" checked="false"></ion-toggle>
+              <p item-end class="disabled" text-end>En ligne</p>
+          </ion-item>
+      </ion-list>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="!checked" style="width: 100%; height: 50px; background-color: black; display: flex; align-items: center; justify-content: center;"><span style="color: red; font-weight: bold; font-size: large;">VOUS ÊTES ACTUELLEMENT HORS LIGNE</span></div>
+  <div #map id="map" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+</ion-content>
+<ion-footer no-border>
+  <!-- <ion-card *ngIf="!checked" class="summery shadow-black "> -->
+  <!--
+      <ion-card class="summery shadow-black ">
+          <ion-card-header>
+              <h2>Summary</h2>
+          </ion-card-header>
+          <ion-card-content>
+              <ion-row>
+                  <ion-col col-6>
+                      <h4>Total Trips</h4>
+                      <h2 class="d-flex">
+                          <ion-icon class="material-icons">directions_car</ion-icon>
+                          9 Trips
+                      </h2>
+                  </ion-col>
+                  <ion-col col-6>
+                      <h4>Earning</h4>
+                      <h2 class="d-flex">
+                          <ion-icon class="material-icons">account_balance_wallet</ion-icon>
+                          ₦ 14,200.20
+                      </h2>
+                  </ion-col>
+              </ion-row>
+          </ion-card-content>
+      </ion-card>
+  -->
+</ion-footer>

@@ -1,0 +1,114 @@
+page-trip_end {
+    .header {
+        .bar-button {
+            display: none;
+        }
+
+        .toolbar .title {
+            small {
+                font-size: 1.1rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+            }
+
+            span {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                text-align: center;
+                z-index: -1;
+            }
+        }
+    }
+
+    .scroll-content {
+        margin-bottom: 0 !important;
+    }
+
+    .list {
+        margin: 0;
+        position: relative;
+        z-index: -1;
+
+        .item {
+            padding: 11px 10px 14px 14px;
+            box-shadow: 0 -4px 10px 10px rgba(0, 0, 0, 0.2);
+
+            ion-avatar {
+                &[item-start] {
+                    margin: 0;
+                    position: relative;
+                    overflow: hidden;
+                    min-width: 45px;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 7px;
+                    margin-right: 13px;
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: -50% !important;
+                        right: -50% !important;
+                        margin: 0 auto;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 0;
+
+                    }
+                }
+            }
+
+            .item-inner {
+                padding: 0;
+                margin: 0;
+
+                h3 {
+                    font-size: 1.1rem;
+                    color: lighten($gray, 20%);
+                }
+
+                .label {
+                    margin: 0;
+                    white-space: normal;
+
+                    h2 {
+                        font-weight: 700;
+                        font-size: 1.25rem;
+                        width: calc(100% - 30px) !important;
+                        padding-top: 3px;
+
+                    }
+
+                }
+
+                .navigate {
+                    &[item-end] {
+                        margin: 0;
+                        text-align: center;
+
+                        h3 {
+                            text-transform: uppercase;
+                            font-size: 1.2rem;
+                        }
+
+                        ion-icon {
+                            color: $theme-color;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .footer {
+        .button.btn {
+            width: calc(100% - 50px);
+            margin: 0 auto;
+            margin-bottom: 22px;
+            background: $red_color;
+        }
+    }
+}

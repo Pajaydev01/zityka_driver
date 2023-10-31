@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <!--
+<button ion-button menuToggle>
+</button>
+-->
+        <ion-title>Le reçu</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-light">
+    <div class="bg-white recipt" text-center>
+        <h6>Récapitulatif des tarifs</h6>
+        <h1 class="text-black">EUR {{rideamount}}</h1>
+        <p style="color: green;">{{paymentmethod}}</p>
+        <ion-list>
+            <ion-item>
+                <ion-avatar item-start>
+                    <img [src]="profileImg">
+                </ion-avatar>
+                <p class="text-black">Votre Avis</p>
+                <h2 class="text-black">{{ridername}}</h2>
+            </ion-item>
+        </ion-list>
+    </div>
+
+</ion-content>
+
+<ion-footer no-border>
+    <div class="rateing_btn">
+        <div class="rateing">
+            <ion-icon name="star" class=""></ion-icon>
+            <ion-icon name="star" class=""></ion-icon>
+            <ion-icon name="star" class=""></ion-icon>
+            <ion-icon name="star" class=""></ion-icon>
+            <ion-icon name="star" class=""></ion-icon>
+        </div>
+        <button ion-button block class="btn shadow-red" (click)="tabs()">Donnez votre avis</button>
+    </div>
+</ion-footer>
