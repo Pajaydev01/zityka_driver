@@ -55,14 +55,21 @@
       <ion-item class="bg-light">
           <ion-label>Choisissez le type</ion-label>
           <ion-select okText="D'accord" cancelText="Rejeter" name="banktype"  [formControl]="credentialsForm.controls['banktype']" text-right>
-<ion-option value="Togocel">Togocel</ion-option>
-<ion-option value="Moov">Moov</ion-option>
+<ion-option value="{{item.name}}" *ngFor="let item of dat.banks">{{item.name}}</ion-option>
 </ion-select>
       </ion-item>
-      <ion-item class="bg-light">
+      <!-- <ion-item class="bg-light">
           <ion-label>Entrez le numéro de compte</ion-label>
           <ion-input name="account_number" type="text" [formControl]="credentialsForm.controls['account_number']" text-right></ion-input>
-      </ion-item>
+      </ion-item> -->
+      <ion-item class="bg-light">
+            <ion-label>BIC</ion-label>
+            <ion-input name="account_number" type="text" [formControl]="credentialsForm.controls['bic']" text-right></ion-input>
+        </ion-item>
+        <ion-item class="bg-light">
+            <ion-label>IBAN</ion-label>
+            <ion-input name="account_number" type="text" [formControl]="credentialsForm.controls['iban']" text-right></ion-input>
+        </ion-item>
       <ion-item class="bg-light">
           <ion-label>Entrez la couleur du véhicule</ion-label>
           <ion-input name="color" type="text" [formControl]="credentialsForm.controls['color']" text-right></ion-input>

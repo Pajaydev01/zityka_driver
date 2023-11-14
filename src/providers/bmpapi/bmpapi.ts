@@ -82,7 +82,7 @@ export class BmpapiProvider {
     return this.http.post(this.url2 + '/driver/login', JSON.stringify(body));
   }
 
-  register(email, firstname, lastname, phone, location, rideType, bankType, account, color, selfie, doc, id, ins, car_photo, license) {
+  register(email, firstname, lastname, phone, location, rideType, bankType, account, color, selfie, doc, id, ins, car_photo, license,bic,iban) {
 
     let body = {
       email: email,
@@ -99,7 +99,9 @@ export class BmpapiProvider {
       passport: id,
       insurance: ins,
       car_photo: car_photo,
-      license: license
+      license: license,
+      bic,
+      iban
     }
 
     return this.http.post(this.url2 + '/signup', JSON.stringify(body), {

@@ -47,13 +47,16 @@ wait:boolean=false;
 r_banktype:string;
 r_account_number:string;
 r_color:string;
+dat:any={};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera,
    private toastcontroller: ToastController, public alertController: AlertController,private emailComposer: EmailComposer,private formBuilder: FormBuilder,private data:dataService, private bmpapiProvider: BmpapiProvider,private loadingcontroller: LoadingController,private base64: Base64) {
      this.credentialsForm = this.formBuilder.group({
        banktype: ['',Validators.required],
-       account_number: ['',Validators.required],
-       color: ['',Validators.required]
+       //account_number: ['',Validators.required],
+       color: ['',Validators.required],
+       bic:['',Validators.required],
+       iban:['',Validators.required]
      });
   }
 
@@ -203,14 +206,35 @@ r_color:string;
           correctOrientation: true,
           allowEdit: true
         }
-        this.camera.getPicture(options).then((imageData) => {
+        this.camera.getPicture(options).then(async (imageData) => {
           // Handle error
           let filepath:string=imageData.substring(0, imageData.lastIndexOf('?'));
 
-          this.base64.encodeFile(filepath).then((base64File: string) => {
+          this.base64.encodeFile(filepath).then(async (base64File: string) => {
             this.pass=base64File.replace("data:image/*;charset=utf-8;base64,","");
             this.passport=false;
-            this.form=true;
+            //load data
+            let loading = this.loadingcontroller.create({
+              content: "...."
+            });
+            loading.present();
+            try {
+              const getter=await this.bmpapiProvider.post('url','/banks/country',{country:'fr'},'POST');
+              loading.dismiss();
+              if(getter.error){
+                this.toast(getter.message);
+                return;
+              }
+              getter.data.push({
+                code:(getter.data.length+1),
+                name:'Autres',
+                country:'fr'
+              })
+              this.dat['banks']=getter.data;
+              this.form=true;
+            } catch (error) {
+              
+            }
           }, (err) => {
             console.log(err);
           });
@@ -235,7 +259,7 @@ let loading = this.loadingcontroller.create({
 loading.present();
 //convert files and upload
 
-this.bmpapiProvider.register(this.details.email,this.details.firstname,this.details.lastname,this.details.phone,this.details.location,this.details.ridetype,this.r_banktype,this.r_account_number,this.r_color,this.image,this.car_reg,this.pass,this.insurance,this.car_photo,this.license).subscribe((event: HttpEvent<any>)=>{
+this.bmpapiProvider.register(this.details.email,this.details.firstname,this.details.lastname,this.details.phone,this.details.location,this.details.ridetype,this.r_banktype,'nill',this.r_color,this.image,this.car_reg,this.pass,this.insurance,this.car_photo,this.license, this.credentialsForm.controls['bic'].value, this.credentialsForm.controls['iban'].value).subscribe((event: HttpEvent<any>)=>{
   loading.dismiss();
   this.form=false;
   this.progresser=true;
